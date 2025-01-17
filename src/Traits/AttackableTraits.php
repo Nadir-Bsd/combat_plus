@@ -23,5 +23,4 @@ trait AttackableTraits {
         return $this;
     }
 }
-
 ?>
