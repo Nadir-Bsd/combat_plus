@@ -33,6 +33,16 @@ final class HeroManager {
         }
     }
 
+    public function deleteHeroByUserId(int $id_user): void
+    {
+        try {
+            $this->heroRepo->deleteHeroByUserId($id_user);
+            echo "Votre Héros a été supprimé avec succès.";
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function createHeroObject(int $id, string $name, float $hp, float $strength, float $speed, float $defense): Hero
     {
         return new Hero($id, $name, $hp, $strength, $speed, $defense);

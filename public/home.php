@@ -14,8 +14,12 @@
 
     array_push($heros, $hero1, $hero2, $hero3, $hero4, $heroCustom);
 
-    // $manager->createHero("Robot", 1.5, 1.5, 1.5, 1.5, 0);
-    // $manager->deleteHero(3);
+    // $manager->createHero("mr Test", 100, 100, 100, 100, 0);
+    // $manager->createHero("Robot", 1.5, 1.5, 1.5, 1.5, 1);
+    // $manager->createHero('golins', 1.1, 1.1, 1.1, 1.1, 1);
+    // $manager->createHero('elementaire', 1.6, 1.6, 1.6, 1.6, 2);
+    // $manager->deleteHero(5);
+    $manager->deleteHeroByUserId(2);
 ?>
 
 <!DOCTYPE html>

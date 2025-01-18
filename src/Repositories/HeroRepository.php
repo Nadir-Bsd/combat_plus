@@ -51,13 +51,22 @@ final class HeroRepository extends AbstractRepository {
             echo "Erreur lors de la requete : " . $error->getMessage();
         }
     }
-    
+
     public function deleteHero(int $id): void
     {
         $query = "DELETE FROM hero WHERE id = :id";
         $statement = $this->pdo->prepare($query);
         if (!$statement->execute([':id' => $id])) {
             throw new Exception("Échec de la suppression du héros avec l'ID $id.");
+        }
+    }
+
+    public function deleteHeroByUserId(int $id_user): void
+    {
+        $query = "DELETE FROM hero WHERE id_user = :id_user";
+        $statement = $this->pdo->prepare($query);
+        if (!$statement->execute([':id_user' => $id_user])) {
+            throw new Exception("Échec de la suppression du héros avec l'ID $id_user.");
         }
     }
 }
