@@ -27,7 +27,6 @@ final class HeroManager {
     {
         try {
             $this->heroRepo->deleteHero($id);
-            echo "Héros supprimé avec succès.";
         } catch (Exception $e) {
             echo $e->getMessage();
         }
@@ -37,7 +36,6 @@ final class HeroManager {
     {
         try {
             $this->heroRepo->deleteHeroByUserId($id_user);
-            echo "Votre Héros a été supprimé avec succès.";
         } catch (Exception $e) {
             echo $e->getMessage();
         }
