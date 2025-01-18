@@ -13,7 +13,7 @@ final class HeroRepository extends AbstractRepository {
     public function findHeroById(int $id): ?Hero
     {
         try {
-            $query = "SELECT * FROM heros WHERE id = :id";
+            $query = "SELECT * FROM hero WHERE id = :id";
             $statement = $this->pdo->prepare($query);
             $statement->execute([
                 ':id' => $id
@@ -27,6 +27,38 @@ final class HeroRepository extends AbstractRepository {
             return $this->mapper->hydrate($res[0]);
         }
         return null;
+    }
+
+    public function createHero(string $name, int $hp, int $strength, int $speed, int $defense, int $id_user): ?int
+    {
+        try {
+
+            $query = "INSERT INTO hero (name, hp, strength, speed, defense, etat, id_user) VALUES (:name, :hp, :strength, :speed, :defense, :etat, :id_user)";
+            $statement = $this->pdo->prepare($query);
+            $statement->execute([
+                ':name' => $name,
+                ':hp' => $hp,
+                ':strength' => $strength,
+                ':speed' => $speed,
+                ':defense' => $defense,
+                ':etat' => 'neutre',
+                ':id_user' => $id_user,
+            ]);
+
+            // Retourne l'ID de la réponse insérée
+            return (int)$this->pdo->lastInsertId();
+        } catch (PDOException $error) {
+            echo "Erreur lors de la requete : " . $error->getMessage();
+        }
+    }
+    
+    public function deleteHero(int $id): void
+    {
+        $query = "DELETE FROM hero WHERE id = :id";
+        $statement = $this->pdo->prepare($query);
+        if (!$statement->execute([':id' => $id])) {
+            throw new Exception("Échec de la suppression du héros avec l'ID $id.");
+        }
     }
 }
 

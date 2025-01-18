@@ -5,7 +5,7 @@
     $manager = new HeroManager();
 
     $findHero = $manager->findHeroById(4);
-    
+
     $hero1 = $manager->createHeroObject(0, "mr Test", 100, 100, 100, 100);
     $hero2 = $manager->createHeroObject(0, 'Robot', 1.5, 1.5, 1.5, 1.5);
     $hero3 = $manager->createHeroObject(0, 'golins', 1.1, 1.1, 1.1, 1.1);
@@ -13,6 +13,9 @@
     $heroCustom = $manager->createHeroObject(0, 'custom', 1.6, 1.6, 1.6, 1.6);
 
     array_push($heros, $hero1, $hero2, $hero3, $hero4, $heroCustom);
+
+    // $manager->createHero("Robot", 1.5, 1.5, 1.5, 1.5, 0);
+    // $manager->deleteHero(3);
 ?>
 
 <!DOCTYPE html>
