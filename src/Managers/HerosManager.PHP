@@ -1,14 +1,10 @@
 <?php 
-require_once '../../utils/autoload.php';
-
-// $hero = new Hero();
-// $monster = new Monster('monster');
+// require_once '../../utils/autoload.php';
 
 $repository = new HeroRepository();
 
-// var_dump($repository->findHeroById(2));
-$hero = $repository->findHeroById(3);
+$hero = $repository->findHeroById(4);
+
 var_dump($hero);
-// var_dump($hero);
-// var_dump($monster);
+
 ?>
