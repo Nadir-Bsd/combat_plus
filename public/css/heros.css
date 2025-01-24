@@ -1,0 +1,93 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #6C63FF, #7EE8FA);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Messages */
+.message {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.message.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.message.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Heroes Grid */
+.heroes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Hero Card */
+.hero-card {
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+.hero-hp {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-stats {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-stats p {
+    margin: 0;
+}
