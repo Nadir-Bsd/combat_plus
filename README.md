@@ -21,7 +21,7 @@
     <li>CRUD (Create, Read, Update, Delete) sur plusieurs entités</li>
     <li>Utilisation de requêtes préparées pour éviter les injections SQL</li>
     <li>Architecture modulaire facilitant l'extensibilité</li>
-    <li>Utilisation des paternes design, Interface, Traits</li>
+    <li>Utilisation des patterns design, Interface, Traits</li>
 </ul>
 
 <h2>📷 Aperçu</h2>
