@@ -1,10 +1,11 @@
-<?php 
+<?php
 
-final class UserRepository extends AbstractRepository {
+final class UserRepository extends AbstractRepository
+{
 
     private UserMapper $mapper;
 
-    public function __construct() 
+    public function __construct()
     {
         parent::__construct();
         $this->mapper = new UserMapper();
@@ -26,13 +27,12 @@ final class UserRepository extends AbstractRepository {
             } else {
                 $res['heroObject'] = null;
             }
-
         } catch (PDOException $error) {
             echo "Erreur lors de la requete : " . $error->getMessage();
         }
 
         if($res){
-            return $this->mapper->hydrate($res);
+            return $this->mapper->hydrate($res[0]);
         }
         return null;
     }
@@ -48,7 +48,6 @@ final class UserRepository extends AbstractRepository {
 
             // search and return User Object
             return $this->findUserByName($name);
-            
         } catch (PDOException $error) {
             echo "Erreur lors de la requete : " . $error->getMessage();
         }
@@ -68,15 +67,12 @@ final class UserRepository extends AbstractRepository {
         $query = "UPDATE user SET name = :name, id_hero = :id_hero WHERE id = :id";
         $statement = $this->pdo->prepare($query);
         if (!$statement->execute([
-            ':id' => $newUserObject->getId(), 
-            ':name' => $newUserObject->getName(), 
+            ':id' => $newUserObject->getId(),
+            ':name' => $newUserObject->getName(),
             'id_hero' => $idHero,
-        ])) 
-        {
-            throw new Exception("Échec de la modification du user avec l'ID ". $newUserObject->getId() . ".");
+        ])) {
+            throw new Exception("Échec de la modification du user avec l'ID " . $newUserObject->getId() . ".");
         }
         return $newUserObject;
     }
 }
-
-?>

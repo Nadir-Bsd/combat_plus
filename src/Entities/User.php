@@ -3,12 +3,13 @@ final class User {
 
     private int $id;
     private string $name;
-    private Hero $heroObject;
+    private ?Hero $heroObject;
 
-    public function __construct(int $id, string $name)
+    public function __construct(int $id, string $name, ?Hero $heroObject = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->heroObject = $heroObject;
     }
 
     public function getId(): int 

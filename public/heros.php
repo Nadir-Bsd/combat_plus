@@ -6,8 +6,10 @@ $manager = new HeroManager();
 
 $heros[] = $manager->createHeroObject(0, "mr Test", 100, 100, 100, 100);
 $heros[] = $manager->createHeroObject(0, 'Robot', 1.5, 1.5, 1.5, 1.5);
-$heros[] = $manager->createHeroObject(0, 'Assassin', 1.1, 1.1, 1.1, 1.1);
+$heros[] = $manager->createHeroObject(0, 'Assassin', 1.2, 1.2, 1.2, 1.2);
 $heros[] = $manager->createHeroObject(0, 'Big G', 1.6, 1.6, 1.6, 1.6);
+
+
 
 session_start();
 $_SESSION['heros'] = $heros;
