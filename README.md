@@ -1,5 +1,8 @@
 <h1>🚀 Projet combat en PHP</h1>
 
+<h2>🚀 Démo</h2>
+    <p>Le jeu est déployé et accessible en ligne : <a href="https://nadir-puissance4.pro4.garage404.com/" target="_blank">Jouer à Puissance 4</a></p>
+
 <h2>🛠 Technologies utilisées</h2>
 <ul>
     <li><strong>PHP</strong> : Langage principal pour le backend</li>
